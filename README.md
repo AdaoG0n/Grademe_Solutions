@@ -1,4 +1,4 @@
-# **42 Grademe Exam Solutions**
+![](https://github.com/AdaoG0n/AdaoG0n/blob/main/assests/animated%20gifs/grademesolutions.gif)
 
 Welcome to the **42 Grademe Exam Solutions** repository! 
 This repository contains solutions for the exercises from the **Grademe exam** at **42 School**. 
