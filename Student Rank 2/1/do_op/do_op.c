@@ -1,29 +1,30 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+#include "unistd.h"
+#include "stdio.h"
+#include "stdlib.h"
 
-int	main(int ac, char **av)
+int     main(int argc, char **argv)
 {
-	int	n1 = 0;
-	int n2 = 0;
-	int	res = 0;
+        int     i = 0;
+        int     k = 0;
+        int     res = 0;
 
-	if (ac == 4)
-	{
-		n1 = atoi(av[1]);
-		n2 = atoi(av[3]);
-		if (av[2][0] == '+')
-			res = n1 + n2;
-		else if (av[2][0] == '-')
-			res = n1 - n2;
-		else if (av[2][0] == '*')
-			res = n1 * n2;
-		else if (av[2][0]== '/')
-			res = n1 / n2;
-		else if (av[2][0] == '%')
-			res = n1 % n2;
-		printf("%d\n", res);
-	}
-	else
-		write(1, "\n", 1);
+        if( argc == 4)
+        {
+                i = atoi(argv[1]);
+                k = atoi(argv[3]);
+                if(argv[2][0] == '+')
+                        res = i + k;
+                else if (argv[2][0] == '-')
+                        res = i - k;
+                else if (argv[2][0] == '*')
+                        res = i * k;
+                else if (argv[2][0] == '%')
+                        res = i % k;
+                else if (argv[2][0] == '/')
+                        res = i / k;
+                printf("%d\n", res);
+        }
+        else
+                write(1, "\n", 1);
+        return(0);
 }
