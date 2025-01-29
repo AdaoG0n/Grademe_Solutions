@@ -31,7 +31,7 @@ $
 $>
 ```
 
-## SOLUCTION
+## ANSWEAR
 
 ```c
 #include <unistd.h>
