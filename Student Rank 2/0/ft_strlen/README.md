@@ -11,7 +11,7 @@ Your function must be declared as follows:
 
 int	ft_strlen(char *str);
 ```
-## SOLUCTION
+## ANSWEAR
 
 ```c
 // Function to calculate the length of a string
