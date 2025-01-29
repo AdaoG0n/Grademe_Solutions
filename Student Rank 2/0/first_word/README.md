@@ -28,7 +28,7 @@ $> ./first_word "  lorem,ipsum  " | cat -e
 lorem,ipsum$
 $>
 ```
-### SOLUCTION
+### ANSWEAR
 
 ```c
 #include "unistd.h"
