@@ -39,7 +39,7 @@ fizz
 buzz
 $> 
 ```
-## SOLUCTION
+## ANSWEAR
 
 ```c
 #include <unistd.h>
