@@ -1,3 +1,4 @@
+### SUBJECT
 ```
 Assignment name  : first_word
 Expected files   : first_word.c
@@ -27,3 +28,27 @@ $> ./first_word "  lorem,ipsum  " | cat -e
 lorem,ipsum$
 $>
 ```
+### SOLUCTION
+
+```c
+#include "unistd.h"
+
+int     main(int argc, char **argv)
+{
+        int     i = 0;
+
+        if(argc == 2) // Ensure there is exactly one argument
+        {
+                while(argv[1][i] == ' ' || argv[1][i] == '\t')  // Skip leading spaces and tabs
+                        i++;
+                while (argv[1][i] != '\0' && argv[1][i] != ' ' && argv[1][i] != '\t') // Print characters until a space, tab, or null-terminator is encountered
+                {
+                        write(1, &argv[1][i], 1);
+                        i++;
+                }
+        }
+        write(1, "\n", 1);  // Print a newline character
+        return(0);
+}
+```
+
