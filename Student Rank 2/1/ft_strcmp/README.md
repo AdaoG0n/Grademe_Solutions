@@ -32,6 +32,4 @@ int ft_strcmp(char *s1, char *s2)
     // Return the difference between the characters at the first unequal position
     return (s1[i] - s2[i]);
 }
-
-}
 ```
