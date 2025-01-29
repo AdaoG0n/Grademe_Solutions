@@ -13,7 +13,7 @@ Your function must be declared as follows:
 void	ft_swap(int *a, int *b);
 ```
 
-## SOLUCTION
+## ANSWEAR
 
 ```c
 #include <unistd.h>
