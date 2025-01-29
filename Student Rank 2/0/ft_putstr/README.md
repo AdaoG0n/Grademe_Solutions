@@ -15,7 +15,7 @@ Your function must be declared as follows:
 void	ft_putstr(char *str);
 ```
 
-## SOLUCTION
+## ANSWEAR
 
 ```c
 #include <unistd.h>
