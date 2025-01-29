@@ -16,28 +16,22 @@ int    ft_strcmp(char *s1, char *s2);
 
 ```c
 #include <stdio.h>
+#include <string.h>
 
-int ft_strcmp(char *s1, char *s2);
-
-int main()
+// Custom implementation of strcmp (string compare)
+int ft_strcmp(char *s1, char *s2)
 {
-    char str1[] = "apple";
-    char str2[] = "apple";
-    char str3[] = "banana";
-    char str4[] = "app";
+    int i;  // Index variable to iterate through both strings
 
-    // Comparing identical strings
-    printf("Result of ft_strcmp(str1, str2): %d\n", ft_strcmp(str1, str2)); // Expected output: 0
+    i = 0;  // Initialize index to 0
+    // Compare characters at the same position in both strings while they are equal
+    // and neither string has reached its null terminator
+    while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+        i++;  // Move to the next character
 
-    // Comparing lexicographically greater string
-    printf("Result of ft_strcmp(str1, str3): %d\n", ft_strcmp(str1, str3)); // Expected output: a negative number
+    // Return the difference between the characters at the first unequal position
+    return (s1[i] - s2[i]);
+}
 
-    // Comparing lexicographically smaller string
-    printf("Result of ft_strcmp(str3, str1): %d\n", ft_strcmp(str3, str1)); // Expected output: a positive number
-
-    // Comparing strings of different lengths
-    printf("Result of ft_strcmp(str1, str4): %d\n", ft_strcmp(str1, str4)); // Expected output: a positive number
-
-    return 0;
 }
 ```
