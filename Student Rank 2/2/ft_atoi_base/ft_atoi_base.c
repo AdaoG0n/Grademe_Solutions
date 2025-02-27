@@ -1,46 +1,33 @@
-#include <stdio.h>//
-#include <stdlib.h>//
-
-int is_blank(char c)
+int     ft_atoi_base(const char *str, int str_base)
 {
-	if (c <= 32)
-		return (1);
-	return (0);
+        int     i = 0;
+        int     n = 0;
+        int     sign = 1;
+        int     value = 0;
+
+        while(str[i] == '-' || str[i] == '+')
+        {
+                if(str[i] == '-')
+                        sign = -1;
+                i++;
+        }
+        while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+                i++;
+        while (str[i])
+        {
+                if (str[i] >= '0' && str[i] <= '9')
+                        value = str[i] - '0';
+                else if (str[i] >= 'a' && str[i] <= 'f')
+                        value = str[i] - 'a' + 10;
+                else if (str[i] >= 'A' && str[i] <= 'F')
+                        value = str[i] - 'A' + 10;
+                else
+                        break;
+                if (value >= str_base)
+                        break;
+                n = ( n * str_base) + value;
+                i++;
+        }
+        return (n * sign);
 }
 
-int		isvalid(char c, int base)
-{
-	char digits[17] = "0123456789abcdef";
-	char digits2[17] = "0123456789ABCDEF";
-
-	while (base--)
-		if (digits[base] == c || digits2[base] == c)
-			return (1);
-	return (0);
-}
-
-int		value_of(char c)
-{
-	if (c >= '0' && c <= '9')
-		return (c - '0');
-	else if (c >= 'a' && c <= 'f')
-		return (c - 'a' + 10);
-	else if (c >= 'A' && c <= 'F')
-		return (c - 'A' + 10);
-	return (0);
-}
-
-int		ft_atoi_base(const char *str, int str_base)
-{
-	int result;
-	int sign;
-
-	result = 0;
-	while (is_blank(*str))
-		str++;
-	sign = (*str == '-') ? -1 : 1;
-	(*str == '-' || *str == '+') ? ++str : 0;
-	while (isvalid(*str, str_base))
-		result = result * str_base + value_of(*str++);
-	return (result * sign);
-}
