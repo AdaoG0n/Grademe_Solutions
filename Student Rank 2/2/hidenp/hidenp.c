@@ -1,26 +1,27 @@
-#include <unistd.h>
+#include "unistd.h"
 
-void	hidenp(char *probe, char *target)
+int     main(int argc, char **argv)
 {
-	while (*probe != '\0')
-	{
-		while (*probe != *target && *target != '\0')
-			++target;
-		if (*target == '\0')
-		{
-			write(1, "0", 1);
-			return;
-		}
-		++target;
-		++probe;
-	}
-	write(1, "1", 1);
-}
+        int i = 0;
+        int j = 0;
+        int k = 0;
 
-int		main(int argc, char **argv)
-{
-	if (argc == 3)
-		hidenp(argv[1], argv[2]);
-	write(1, "\n", 1);
-	return (0);
+        if (argc == 3)
+        {
+                while (argv[1][i] != '\0')
+                {
+                        while(argv[1][i] != argv[2][j] && argv[2][j] != '\0')
+                                j++;
+                        if (argv[2][j] == '\0')
+                        {
+                                write(1, "0\n", 2);
+                                return(0);
+                        }
+                        i++;
+                        j++;
+                }
+                write(1, "1", 1);
+        }
+        write(1, "\n", 1);
+        return(0);
 }
